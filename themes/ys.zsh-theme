@@ -1,3 +1,4 @@
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 # Clean, simple, compatible and meaningful.
 # Tested on Linux, Unix and Windows under ANSI colors.
 # It is recommended to use with a dark background and the font Inconsolata.
@@ -55,7 +56,7 @@ PROMPT="
 ${hg_info}\
 ${git_info} \
 %{$fg[white]%}[%*]
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$fg[red]%}${ret_status} %{$reset_color%}"
 
 if [[ "$USER" == "root" ]]; then
 PROMPT="
@@ -68,5 +69,5 @@ PROMPT="
 ${hg_info}\
 ${git_info} \
 %{$fg[white]%}[%*]
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$fg[red]%}${ret_status} %{$reset_color%}"
 fi
